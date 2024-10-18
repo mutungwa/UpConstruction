@@ -579,31 +579,47 @@ section, .section {
 }
 .hero {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vh; /* Full viewport height */
     position: relative;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: #ffffff;
 }
+
 .hero .info {
     position: relative;
     inset: 0;
     z-index: 3;
-    padding: 140px 0 60px 0;
+    padding: 140px 0 60px 0; /* Adjust padding */
 }
-@media (max-width:768px), (max-height:480px) {
+
+@media (max-width: 768px), (max-height: 480px) {
     .hero .info {
-    padding: 100px 50px 60px 50px;
+        padding: 100px 50px 60px 50px; /* Adjust padding for mobile */
+    }
 }
-}.hero .info h2 {
+.hero .info .big-title {
+    font-size: 60px; /* Adjust this value for the size of "Southern" */
+    font-weight: 700; /* Bold */
+    color: var(--contrast-color); /* Color that contrasts well with the background */
+}
+
+.hero .info .small-title {
+    font-size: 30px; /* Adjust this value for the size of "Earthmoving & Excavation" */
+    font-weight: 500; /* Slightly lighter weight */
+    color: var(--contrast-color); /* Same color for consistency */
+}
+.hero .info h2 {
     margin-bottom: 30px;
     padding-bottom: 30px;
     font-size: 56px;
     font-weight: 700;
     position: relative;
 }
+
 .hero .info h2:after {
     content: "";
     position: absolute;
@@ -616,14 +632,18 @@ section, .section {
     bottom: 0;
     margin: auto;
 }
-@media (max-width:768px) {
+
+@media (max-width: 768px) {
     .hero .info h2 {
-    font-size: 36px;
+        font-size: 36px; /* Smaller font size for mobile */
+    }
 }
-}.hero .info p {
+
+.hero .info p {
     color: color-mix(in srgb, var(--default-color), transparent 20%);
     font-size: 18px;
 }
+
 .hero .info .btn-get-started {
     color: var(--contrast-color);
     font-family: var(--heading-font);
@@ -637,14 +657,21 @@ section, .section {
     margin: 10px;
     border: 2px solid var(--accent-color);
 }
+
 .hero .info .btn-get-started:hover {
     background: var(--accent-color);
+}
+@media (max-width: 768px), (max-height: 480px) {
+    .hero .info {
+        padding: 50px 20px; /* Adjust padding for mobile */
+    }
 }
 .hero .carousel {
     inset: 0;
     position: absolute;
     overflow: hidden;
 }
+
 .hero .carousel-item {
     position: absolute;
     inset: 0;
@@ -653,26 +680,37 @@ section, .section {
     background-repeat: no-repeat;
     overflow: hidden;
     transition-duration: 0.4s;
-    object-fit: cover; 
-    object-position: center;
-    
 }
-@media (max-width: 768px) {
-    .hero .carousel-item img {
-        object-fit: cover; /* Keeps the image zoomed in on mobile */
-        object-position: top center; /* Adjusts the focus to show the most relevant part of the image */
-        height: 100%; /* Ensures the height fills the screen */
-    }
-}
+
 .hero .carousel-item img {
     position: absolute;
     inset: 0;
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Default for desktop */
     z-index: 1;
 }
+
+@media (max-width: 768px) {
+    .hero .carousel-item {
+        height: 80vh; /* Full viewport height on mobile */
+        display: flex;
+        align-items: center; /* Center the image vertically */
+        justify-content: center; /* Center the image horizontally */
+    }
+
+    .hero .carousel-item img {
+        width: 100%; /* Ensures full width */
+        height: 100%; /* Full height to cover the container */
+        object-fit: cover; /* Ensure the image covers the entire area */
+        object-position: center; /* Center the image */
+    }
+    .hero {
+        padding: 0 0 50px 0; /* Increased bottom padding for mobile */
+    }
+}
+
 .hero .carousel-item::before {
     content: "";
     background-color: color-mix(in srgb, var(--background-color), transparent 30%);
@@ -680,21 +718,29 @@ section, .section {
     inset: 0;
     z-index: 2;
 }
+
 .hero .carousel-control-prev {
     justify-content: start;
 }
-@media (min-width:640px) {
+
+@media (min-width: 640px) {
     .hero .carousel-control-prev {
-    padding-left: 15px;
+        padding-left: 15px;
+    }
 }
-}.hero .carousel-control-next {
+
+.hero .carousel-control-next {
     justify-content: end;
 }
-@media (min-width:640px) {
+
+@media (min-width: 640px) {
     .hero .carousel-control-next {
-    padding-right: 15px;
+        padding-right: 15px;
+    }
 }
-}.hero .carousel-control-next-icon, .hero .carousel-control-prev-icon {
+
+.hero .carousel-control-next-icon,
+.hero .carousel-control-prev-icon {
     background: none;
     font-size: 26px;
     line-height: 0;
@@ -707,16 +753,29 @@ section, .section {
     align-items: center;
     justify-content: center;
 }
-.hero .carousel-control-prev, .hero .carousel-control-next {
+
+.hero .carousel-control-prev,
+.hero .carousel-control-next {
     z-index: 3;
     transition: 0.3s;
 }
-.hero .carousel-control-prev:focus, .hero .carousel-control-next:focus {
+
+.hero .carousel-control-prev:focus,
+.hero .carousel-control-next:focus {
     opacity: .5;
 }
-.hero .carousel-control-prev:hover, .hero .carousel-control-next:hover {
+
+.hero .carousel-control-prev:hover,
+.hero .carousel-control-next:hover {
     opacity: .9;
 }
+
+@media (max-width: 768px) {
+    .get-started {
+        margin-top: -150px; /* Negative margin to bring it closer */
+    }
+}
+
 .get-started .content {
     padding: 30px 0;
 }
