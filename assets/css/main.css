@@ -675,7 +675,7 @@ section, .section {
 .hero .carousel-item {
     position: absolute;
     inset: 0;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -703,7 +703,7 @@ section, .section {
     .hero .carousel-item img {
         width: 100%; /* Ensures full width */
         height: 100%; /* Full height to cover the container */
-        object-fit: cover; /* Ensure the image covers the entire area */
+        object-fit: conr; /* Ensure the image covers the entire area */
         object-position: center; /* Center the image */
     }
     .hero {
