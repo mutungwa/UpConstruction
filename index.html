@@ -119,30 +119,42 @@
             </div>
           </div>
           <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-            <form action="forms/quote.php" method="post" class="php-email-form">
-              <h3>Request a Quote</h3>
-              <p>Provide your details and project description, and we’ll get back to you with a custom quote tailored to your needs.</p>
-              <div class="row gy-3">
-                <div class="col-12">
-                  <input type="text" name="name" class="form-control" placeholder="Name" required="">
-                </div>
-                <div class="col-12">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
-                </div>
-                <div class="col-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-                <div class="col-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your quote request has been sent successfully. Thank you!</div>
-                  <button type="submit">Get a Quote</button>
-                </div>
-              </div>
-            </form>
+            <form action="#" method="post" class="php-email-form" onsubmit="handleFormSubmit(event)">
+  <h3>Request a Quote</h3>
+  <p>Provide your details and project description, and we’ll get back to you with a custom quote tailored to your needs.</p>
+  <div class="row gy-3">
+    <div class="col-12">
+      <input type="text" name="name" class="form-control" placeholder="Name" required="">
+    </div>
+    <div class="col-12">
+      <input type="email" class="form-control" name="email" placeholder="Email" required="">
+    </div>
+    <div class="col-12">
+      <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
+    </div>
+    <div class="col-12">
+      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+    </div>
+    <div class="col-12 text-center">
+      <div class="loading" style="display: none;">Loading</div>
+      <div class="error-message" style="display: none;">Error occurred, please try again.</div>
+      <div class="sent-message" style="display: none;">Your quote request has been sent successfully. Thank you!</div>
+      <button type="submit">Get a Quote</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Hide loading and error messages, then show the success message
+    document.querySelector('.loading').style.display = 'none';
+    document.querySelector('.error-message').style.display = 'none';
+    document.querySelector('.sent-message').style.display = 'block';
+  }
+</script>
+
           </div>
         </div>
       </div>
