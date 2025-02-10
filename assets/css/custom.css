@@ -109,150 +109,102 @@ h6 {
         transform: rotate(360deg);
     }
 }
+/* Navbar Styling */
 .header {
-    --background-color: rgba(255, 255, 255, 0);
-    padding: 20px 0;
-    transition: 0.5s;
-    z-index: 997;
+    background-color: #fcf9f9;
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
+
 .header .logo img {
-    max-height: 32px;
-    margin-right: 8px;
+    max-height: 40px;
 }
-.header .logo h1 {
-    font-size: 24px;
+
+.navmenu ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    font-weight: 700;
-    color: var(--heading-color);
+    padding: 0;
 }
-.header .logo span {
-    font-size: 24px;
-    padding-left: 1px;
-    font-family: var(--heading-font);
-    color: var(--color-primary);
+
+.navmenu li {
+    margin: 0 15px;
 }
-.scrolled .header {
-    box-shadow: 0 0 18px rgb(0 0 0 / 0.1);
-    --background-color: rgba(255, 255, 255, 0.95);
-    --heading-color: #3c3c3c;
-    --nav-color: #3c3c3c;
-    --nav-hover-color: #3c3c3c;
+
+.navmenu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
 }
-@media (min-width: 1200px) {
-    .navmenu {
-        padding: 0;
-    }
-    .navmenu ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        list-style: none;
-        align-items: center;
-    }
-    .navmenu li {
-        position: relative;
-    }
-    .navmenu > ul > li {
-        white-space: nowrap;
-        padding: 15px 14px;
-    }
-    .navmenu > ul > li:last-child {
-        padding-right: 0;
-    }
-    .navmenu a,
-    .navmenu a:focus {
-        color: var(--nav-color);
-        font-size: 14px;
-        padding: 0 2px;
-        font-family: var(--nav-font);
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        white-space: nowrap;
-        transition: 0.3s;
-        position: relative;
-        text-transform: uppercase;
-    }
-    .navmenu a i,
-    .navmenu a:focus i {
-        font-size: 12px;
-        line-height: 0;
-        margin-left: 5px;
-        transition: 0.3s;
-    }
-    .navmenu > ul > li > a:before {
-        content: "";
-        position: absolute;
-        height: 2px;
-        bottom: -6px;
-        left: 0;
-        background-color: var(--accent-color);
-        visibility: hidden;
-        width: 0;
-        transition: 0.3s ease-in-out;
-    }
-    .navmenu .active:before,
-    .navmenu a:hover:before,
-    .navmenu li:hover > a:before {
-        visibility: visible;
-        width: 100%;
-    }
-    .navmenu .active,
-    .navmenu .active:focus,
-    .navmenu li:hover > a {
-        color: var(--nav-hover-color);
-    }
-    .navmenu .dropdown ul {
-        margin: 0;
-        padding: 10px 0;
-        background: var(--nav-dropdown-background-color);
-        display: block;
-        position: absolute;
-        visibility: hidden;
-        left: 14px;
-        top: 130%;
-        opacity: 0;
-        transition: 0.3s;
-        border-radius: 4px;
-        z-index: 99;
-        box-shadow: 0 0 30px rgb(0 0 0 / 0.1);
-    }
-    .navmenu .dropdown ul li {
-        min-width: 200px;
-    }
-    .navmenu .dropdown ul a {
-        padding: 10px 20px;
-        font-size: 15px;
-        text-transform: none;
-        font-weight: 400;
-        color: var(--nav-dropdown-color);
-    }
-    .navmenu .dropdown ul a i {
-        font-size: 12px;
-    }
-    .navmenu .dropdown ul .active:hover,
-    .navmenu .dropdown ul a:hover,
-    .navmenu .dropdown ul li:hover > a {
-        color: var(--nav-dropdown-hover-color);
-    }
-    .navmenu .dropdown:hover > ul {
-        opacity: 1;
-        top: 100%;
-        visibility: visible;
-    }
-    .navmenu .dropdown .dropdown ul {
-        top: 0;
-        left: -90%;
-        visibility: hidden;
-    }
-    .navmenu .dropdown .dropdown:hover > ul {
-        opacity: 1;
-        top: 0;
-        left: -100%;
-        visibility: visible;
-    }
+
+.navmenu a:hover,
+.navmenu .active {
+    color: #0c0c0c;
 }
+
+.navmenu a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #feb900;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navmenu a:hover::after,
+.navmenu .active::after {
+    width: 100%;
+}
+
+/* Dropdown Menu */
+.navmenu .dropdown ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #e9e4e4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.navmenu .dropdown:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+}
+
+.navmenu .dropdown ul li {
+    padding: 10px 20px;
+}
+
+.navmenu .dropdown ul a {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navmenu .dropdown ul a:hover {
+    color: #feb900;
+}
+
+
 .footer .social-links a,
 .hero .info p,
 .page-title .breadcrumbs ol li + li::before {
@@ -511,7 +463,7 @@ section {
 }
 @media (max-width: 1199px) {
     .mobile-nav-toggle {
-        color: var(--nav-color);
+        color: black;
         font-size: 28px;
         line-height: 0;
         margin-right: 10px;
@@ -600,7 +552,7 @@ section {
         overflow: hidden;
     }
     .mobile-nav-active .mobile-nav-toggle {
-        color: #fff;
+        color: #141313;
         position: absolute;
         font-size: 32px;
         top: 15px;
@@ -653,7 +605,7 @@ section {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #f3f1f1;
 }
 .hero .info {
     inset: 0;
@@ -2182,3 +2134,23 @@ section {
     color: color-mix(in srgb, var(--default-color), transparent 60%);
     font-size: 14px;
 }
+.navbar-toggler {
+    border: none !important; /* Remove any border around the button */
+    outline: none !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Inverts the white icon to black */
+    width: 30px; /* Adjust size if needed */
+    height: 30px;
+}
+.logo-text {
+    font-size: 15px;
+    font-weight: bold;
+    color: black; /* Set the color to black */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif; /* Change to the font of your choice */
+    font-style: italic; /* Makes the text italic */
+  }
+  
