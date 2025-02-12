@@ -605,7 +605,7 @@ section {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: #f3f1f1;
+    background-color: #f5f2f2;
 }
 .hero .info {
     inset: 0;
@@ -664,13 +664,22 @@ section {
     inset: 0;
     position: absolute;
     overflow: hidden;
+    filter: none !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    background: none !important;
 }
 .hero .carousel-item {
     position: absolute;
     inset: 0;
-    background-size: contain;
+    background-size: cover;
     overflow: hidden;
     transition-duration: 0.4s;
+    filter: none !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    background: none !important;
+
 }
 .alt-services .features-image img,
 .alt-services-2 .features-image img,
@@ -682,20 +691,9 @@ section {
     height: 100%;
     object-fit: cover;
     z-index: 1;
+    background: none !important;
 }
-.hero .carousel-item::before {
-    content: "";
-    background-color: color-mix(in srgb, var(--background-color), transparent 30%);
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-}
-.hero .carousel-control-prev {
-    justify-content: start;
-}
-.hero .carousel-control-next {
-    justify-content: end;
-}
+
 @media (min-width: 640px) {
     .hero .carousel-control-prev {
         padding-left: 15px;
@@ -704,33 +702,7 @@ section {
         padding-right: 15px;
     }
 }
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
-    background: 0 0;
-    font-size: 26px;
-    line-height: 0;
-    background: color-mix(in srgb, var(--default-color), transparent 80%);
-    color: color-mix(in srgb, var(--default-color), transparent 40%);
-    border-radius: 50px;
-    width: 54px;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero .carousel-control-next,
-.hero .carousel-control-prev {
-    z-index: 3;
-    transition: 0.3s;
-}
-.hero .carousel-control-next:focus,
-.hero .carousel-control-prev:focus {
-    opacity: 0.5;
-}
-.hero .carousel-control-next:hover,
-.hero .carousel-control-prev:hover {
-    opacity: 0.9;
-}
+
 @media (max-width: 768px) {
     .hero .info h2 {
         font-size: 36px;
@@ -746,6 +718,7 @@ section {
         height: 100%;
         object-fit: conr;
         object-position: center;
+        
     }
     .hero {
         padding: 0 0 50px;
@@ -2134,16 +2107,7 @@ section {
     color: color-mix(in srgb, var(--default-color), transparent 60%);
     font-size: 14px;
 }
-.navbar-toggler {
-    border: none !important; /* Remove any border around the button */
-    outline: none !important;
-}
 
-.navbar-toggler-icon {
-    filter: invert(1); /* Inverts the white icon to black */
-    width: 30px; /* Adjust size if needed */
-    height: 30px;
-}
 .logo-text {
     font-size: 15px;
     font-weight: bold;
