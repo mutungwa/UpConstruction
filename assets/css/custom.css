@@ -661,7 +661,7 @@ section {
     }
 
     .hero .carousel-item {
-        height: 62vh;
+        height: 55vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -678,12 +678,19 @@ section {
     }
 
     .hero {
-        padding: 0 0 50px;
+        padding: 0px;
+        margin-top: 0%;
     }
 
     .get-started {
-        margin-top: -320px;
+        margin-top: -370px;
     }
+    @media (max-width: 768px) {
+        .get-started {
+          /* Less padding for smaller screens */
+            margin-top: -400;        /* Reset margin-top if needed */
+          /* Optional, adjust text alignment for mobile */
+        }
 }
 
 .comment-form form p,
