@@ -90,7 +90,7 @@
   <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
     <div class="carousel-item active">
-      <img src="assets/img/new home.png" alt="Excavation Project 2" loading="lazy">
+      <img id="hero-image"src="assets/img/new home.png" alt="Excavation Project 2" loading="lazy">
     </div>
 
   </div>
@@ -103,8 +103,6 @@
     <section id="get-started" class="get-started section">
       <div class="container">
         <div class="row justify-content-between gy-4">
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-          </div>
           <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
             <form action="forms/quote.php" method="post" class="php-email-form" onsubmit="handleFormSubmit(event)">
   <h3>Request a Quote</h3>
@@ -169,6 +167,23 @@
 }
 
 </script>
+<script>
+  function updateHeroImage() {
+    const heroImage = document.getElementById('hero-image');
+    if (window.innerWidth >= 1024) {
+      heroImage.src = 'assets/img/pic 2.jpg';  // Image for large screens
+    } else {
+      heroImage.src = 'assets/img/new home.png';  // Image for small screens
+    }
+  }
+
+  // Call the function when the page loads
+  window.onload = updateHeroImage;
+
+  // Call the function when the window is resized
+  window.onresize = updateHeroImage;
+</script>
+
 
           </div>
         </div>
@@ -179,7 +194,7 @@
 <section id="constructions" class="constructions section">
   <div class="container section-title" data-aos="fade-up">
     <h2>Our Services</h2>
-    <p>We specialize in constructing access roads, bulk excavation, land clearing, slashing, land and scrub clearing, rock breaking, dozing, house site excavation, landscaping, building site cleanups, soil supply and spreading, and excavation and earth moving services (we have large and small excavators, posi truck loader dozer, and 10 yard tipper trucks</p>
+    <p>We specialize in constructing access roads, bulk excavation, land clearing, slashing, land and scrub clearing, rock breaking, dozing, house site excavation, landscaping, building site cleanups, soil supply and spreading, excavation and earth moving services (we have large and small excavators, posi truck loader dozer, and 10 yard tipper trucks</p>
   </div>
 
   <div class="container">
