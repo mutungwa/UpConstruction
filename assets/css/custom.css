@@ -717,15 +717,15 @@ section {
         width: 100%;
         height: 100%;
         object-fit: contain;
-        object-position: center;
-        margin-top: -30px;
+        object-position:top;
+        margin-top: 35px;
         
     }
     .hero {
         padding: 0 0 50px;
     }
     .get-started {
-        margin-top: -150px;
+        margin-top: -400px;
     }
 }
 .get-started .content {
