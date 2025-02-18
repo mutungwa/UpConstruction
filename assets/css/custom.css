@@ -659,9 +659,9 @@ section {
     .hero .info h2 {
         font-size: 36px;
     }
-
+}
     .hero .carousel-item {
-        height: 55vh;
+        height: 70vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -683,7 +683,7 @@ section {
     }
 
     .get-started {
-        margin-top: -370px;
+        margin-top: -250px;
     }
     @media (max-width: 768px) {
         .get-started {
