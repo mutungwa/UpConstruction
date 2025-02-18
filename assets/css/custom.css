@@ -716,7 +716,7 @@ section {
     .hero .carousel-item img {
         width: 100%;
         height: 100%;
-        object-fit: conr;
+        object-fit: contain;
         object-position: center;
         
     }
