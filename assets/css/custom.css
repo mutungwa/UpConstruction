@@ -597,7 +597,6 @@ section {
 .section-title h2:after {
     margin: 0 0 10px 15px;
 }
-
 .hero {
     width: 100%;
     min-height: 100vh;
@@ -607,16 +606,60 @@ section {
     justify-content: center;
     overflow: hidden;
     background-color: #f5f2f2;
-    margin-top: 0; /* Remove top margin to touch navbar */
 }
-
+.hero .info {
+    inset: 0;
+    z-index: 3;
+    padding: 140px 0 60px;
+}
+.hero .info .big-title {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--contrast-color);
+}
+.hero .info .small-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--contrast-color);
+}
+.hero .info h2 {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    font-size: 56px;
+    font-weight: 700;
+}
+.hero .info h2:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.hero .info p {
+    font-size: 18px;
+}
+.hero .info .btn-get-started {
+    color: var(--contrast-color);
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid var(--accent-color);
+}
 @media (max-width: 768px), (max-height: 480px) {
     .hero .info {
         padding: 50px 20px;
     }
 }
-
-/* Carousel styling */
 .hero .carousel {
     inset: 0;
     position: absolute;
@@ -626,74 +669,86 @@ section {
     z-index: 1 !important;
     background: none !important;
 }
-
 .hero .carousel-item {
     position: absolute;
     inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-size: cover;
     overflow: hidden;
-}
+    transition-duration: 0.4s;
+    filter: none !important;
+    opacity: 1 !important;
+    z-index: 1 !important;
+    background: none !important;
 
-/* Image styling */
+}
+.alt-services .features-image img,
+.alt-services-2 .features-image img,
 .hero .carousel-item img {
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Ensures the image covers the area */
-    object-position: center; /* Keeps the image centered */
     position: absolute;
     inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     z-index: 1;
     background: none !important;
+}
+
+@media (min-width: 640px) {
+    .hero .carousel-control-prev {
+        padding-left: 15px;
+    }
+    .hero .carousel-control-next {
+        padding-right: 15px;
+    }
 }
 
 @media (max-width: 768px) {
     .hero .info h2 {
         font-size: 36px;
     }
-
     .hero .carousel-item {
-        height: 70vh; /* Adjusted height for mobile view */
+        height: 80vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
     }
-
     .hero .carousel-item img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Ensures the full image is visible on smaller screens */
+        object-fit: conr;
         object-position: center;
-        max-width: 100%;
-        max-height: 100%;
+        
     }
-
     .hero {
-        padding: 0px;
-        margin-top: -22px; /* Ensures no space above */
+        padding: 0 0 50px;
     }
-}
-.get-started {
-    margin-top: 0px; /* Default margin for desktop */
-    border: 2px solid transparent;
-}
-@media (max-width: 768px) {
     .get-started {
-        /* Reset margin-top for smaller screens */
-        margin-top: -357px;
-    
-         /* Adjusted value for mobile */
-        /* Optional: adjust text alignment or other styles if needed */
+        margin-top: -150px;
     }
+}
+.get-started .content {
+    padding: 30px 0;
+}
+.get-started .content h3 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    position: relative;
+}
+.get-started .content h3:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 4px;
+    left: 0;
+    bottom: 0;
 }
 .comment-form form p,
 .get-started .content p {
     font-size: 14px;
-    margin-top: auto;
 }
 .get-started .php-email-form {
     background: color-mix(in srgb, var(--default-color), transparent 97%);
